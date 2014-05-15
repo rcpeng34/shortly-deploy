@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     concat: {
       js: {
         src: 'public/client/*',
-        dest: 'public/client/combined.js'
+        dest: 'public/dist/combined.js'
       }
     },
 
@@ -27,16 +27,10 @@ module.exports = function(grunt) {
     uglify: {
       target: {
         files: {
-          'public/client/combined.min.js': [
-            'public/client/app.js',
-            'public/client/createLinkView.js',
-            'public/client/link.js',
-            'public/client/links.js',
-            'public/client/linksView.js',
-            'public/client/linkView.js',
-            'public/client/router.js'
+          'public/dist/combined.min.js': [
+            'public/dist/combined.js'
           ],
-          'public/css/style.min.css': [
+          'public/dist/style.min.css': [
             'public/client/css/style.css'
           ]
         }
