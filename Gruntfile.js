@@ -6,6 +6,10 @@ module.exports = function(grunt) {
       js: {
         src: 'public/client/*',
         dest: 'public/client/combined.js'
+      },
+      lib: {
+        src: 'public/lib/*',
+        dest: 'public/lib/combined.js'
       }
     },
 
@@ -28,10 +32,13 @@ module.exports = function(grunt) {
       target: {
         files: {
           'public/dist/combined.min.js': [
-            'public/combined.js'
+            'public/client/combined.js'
           ],
           'public/dist/style.min.css': [
             'public/client/css/style.css'
+          ],
+          'public/dist/lib.min.js': [
+            'public/lib/combined.js'
           ]
         }
       }
