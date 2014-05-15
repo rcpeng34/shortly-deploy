@@ -122,13 +122,22 @@ module.exports = function(grunt) {
     'mochaTest'
   ]);
 
-  grunt.registerTask('build', [
-    'jshint',
-    'mochaTest',
-    'concat',
-    'uglify',
-    'cssmin'
-  ]);
+  grunt.registerTask('build', function() {
+    if(!grunt.option('prod')) { // prod is falsy implies this is a dev call
+      grunt.task.run(['mochaTest'])
+    }
+    grunt.task.run(['jshint', 'concat', 'uglify', 'cssmin'])
+  }
+
+
+  // [
+  //   'jshint',
+  //   'mochaTest',
+  //   'concat',
+  //   'uglify',
+  //   'cssmin'
+  // ]
+  );
 
   grunt.registerTask('upload', function(n) {
     if(grunt.option('prod')) {
