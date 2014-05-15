@@ -6,11 +6,11 @@ module.exports = function(grunt) {
       js: {
         src: 'public/client/*',
         dest: 'public/client/combined.js'
-      },
-      lib: {
-        src: 'public/lib/*',
-        dest: 'public/lib/combined.js'
       }
+      // lib: {
+      //   src: 'public/lib/*',
+      //   dest: 'public/lib/combined.js'
+      // }
     },
 
     mochaTest: {
@@ -33,10 +33,10 @@ module.exports = function(grunt) {
         files: {
           'public/dist/combined.min.js': [
             'public/client/combined.js'
-          ],
-          'public/dist/lib.min.js': [
-            'public/lib/combined.js'
           ]
+          // 'public/dist/lib.min.js': [
+          //   'public/lib/combined.js'
+          // ]
         }
       }
     },
@@ -64,7 +64,7 @@ module.exports = function(grunt) {
         expand: true,
         cwd: 'public/css/',
         src: ['*.css', '!*.min.css'],
-        des: 'public/dist/',
+        dest: 'public/dist/',
         ext: '.min.css'
       }
     },
