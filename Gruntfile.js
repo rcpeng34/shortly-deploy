@@ -123,9 +123,8 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('build', function() {
-    console.log(grunt.option('prod'));
-    if(!!!grunt.option('prod')) { // prod is falsy implies this is a dev call
-      grunt.task.run(['mochaTest']);
+    if(!grunt.option('prod')) { // prod is falsy implies this is a dev call
+      grunt.task.run(['mochaTest'])
     }
     grunt.task.run(['jshint', 'concat', 'uglify', 'cssmin'])
   });
