@@ -1,5 +1,5 @@
-// var request = require('supertest');
 var express = require('express');
+var request = require('supertest');
 var expect = require('chai').expect;
 var app = require('../server-config.js');
 
