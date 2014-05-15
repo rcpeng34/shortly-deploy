@@ -35,7 +35,7 @@ module.exports = function(grunt) {
             'public/client/combined.js'
           ],
           'public/dist/style.min.css': [
-            'public/client/css/style.css'
+            'public/css/style.css'
           ],
           'public/dist/lib.min.js': [
             'public/lib/combined.js'
