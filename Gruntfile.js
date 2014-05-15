@@ -25,6 +25,19 @@ module.exports = function(grunt) {
     },
 
     uglify: {
+      target: {
+        files: {
+          'public/client/combined.min.js': [
+            'public/client/app.js',
+            'public/client/createLinkView.js',
+            'public/client/link.js',
+            'public/client/links.js',
+            'public/client/linksView.js',
+            'public/client/linkView.js',
+            'public/client/router.js'
+          ]
+        }
+      }
     },
 
     jshint: {
@@ -98,6 +111,8 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('build', [
+    'concat',
+    'uglify'
   ]);
 
   grunt.registerTask('upload', function(n) {
@@ -111,6 +126,5 @@ module.exports = function(grunt) {
   grunt.registerTask('deploy', [
     // add your deploy tasks here
   ]);
-
 
 };
