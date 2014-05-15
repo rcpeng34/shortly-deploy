@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     concat: {
       js: {
         src: 'public/client/*',
-        dest: 'combined.js'
+        dest: 'public/client/combined.js'
       }
     },
 
