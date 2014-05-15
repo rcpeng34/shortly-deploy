@@ -35,6 +35,9 @@ module.exports = function(grunt) {
             'public/client/linksView.js',
             'public/client/linkView.js',
             'public/client/router.js'
+          ],
+          'public/css/style.min.css': [
+            'public/client/css/style.css'
           ]
         }
       }
