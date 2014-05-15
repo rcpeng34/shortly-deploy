@@ -34,9 +34,6 @@ module.exports = function(grunt) {
           'public/dist/combined.min.js': [
             'public/client/combined.js'
           ],
-          'public/dist/style.min.css': [
-            'public/css/style.css'
-          ],
           'public/dist/lib.min.js': [
             'public/lib/combined.js'
           ]
@@ -59,6 +56,13 @@ module.exports = function(grunt) {
     },
 
     cssmin: {
+      minify: {
+        expand: true,
+        cwd: 'public/css/',
+        src: ['*.css', '!*.min.css'],
+        des: 'public/dist/',
+        ext: '.min.css'
+      }
     },
 
     watch: {
@@ -73,7 +77,7 @@ module.exports = function(grunt) {
         ]
       },
       css: {
-        files: 'public/*.css',
+        files: 'public/css/*.css',
         tasks: ['cssmin']
       }
     },
@@ -116,7 +120,8 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', [
     'concat',
-    'uglify'
+    'uglify',
+    'cssmin'
   ]);
 
   grunt.registerTask('upload', function(n) {
